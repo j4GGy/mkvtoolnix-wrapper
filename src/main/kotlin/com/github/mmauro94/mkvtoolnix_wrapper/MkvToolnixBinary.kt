@@ -46,7 +46,7 @@ enum class MkvToolnixBinary(val binaryName: String) {
         return if (m.matches()) {
             VersionInfo(
                 programName = m.group(1)!!,
-                version = Version(m.group(2)!!.toInt(), m.group(3)!!.toInt(), m.group(4)!!.toInt()),
+                version = Version(m.group(2)!!.toInt(), m.group(3)!!.toInt(), m.group(4)?.toInt() ?: 0), // some versions do not include a "patch" segment
                 codename = m.group(5)!!,
                 is64bit = m.group(6) == "64"
             )
@@ -56,6 +56,6 @@ enum class MkvToolnixBinary(val binaryName: String) {
     }
 
     companion object {
-        private val VERSION_PATTERN = Pattern.compile("^(.+)\\s+v(\\d+)\\.(\\d+)\\.(\\d+)\\s+\\('(.+)'\\)(?:\\s+(\\d+)-bit)?$")!!
+        private val VERSION_PATTERN = Pattern.compile("^(.+)\\s+v(\\d+)\\.(\\d+)\\.?(\\d+)?\\s+\\('(.+)'\\)(?:\\s+(\\d+)-bit)?$")!!
     }
 }
