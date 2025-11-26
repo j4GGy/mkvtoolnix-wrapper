@@ -8,7 +8,7 @@ plugins {
 
 
 group 'com.github.mmauro94'
-version '2.0.1'
+version '2.0.1-j2'
 
 repositories {
     mavenCentral()

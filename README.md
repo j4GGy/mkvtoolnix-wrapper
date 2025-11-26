@@ -7,6 +7,10 @@ compile 'com.github.mmauro94:mkvtoolnix-wrapper:1.0.0'
 ```
 **WARNING** This library is not feature complete: there are quite a few advanced options that are not currently supported. You can achieve them adding custom args to the command.
 
+>**Note**
+> 
+> Tests pass for `mkvtoolnix` version `82.0`
+
 # Usage
 
 
